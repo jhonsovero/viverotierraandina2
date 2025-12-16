@@ -1,0 +1,553 @@
+/* === 1. RESET GLOBAL Y FUENTES === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* === 2. HEADER === */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    height: 70px;
+    padding: 0 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* NUEVO ESTILO PARA EL LOGO */
+.logo-img {
+    height: 70px; /* Ajusta esto según el tamaño de tu logo */
+    width: auto;  /* Mantiene la proporción */
+    display: block;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover { color: #65b84f; }
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ESTILOS DEL BOTÓN WHATSAPP */
+.cta-button {
+    background-color: #25D366; /* Color oficial de WhatsApp */
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px; /* Bordes más redondos estilo chat */
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    
+    /* Flexbox para alinear icono y texto */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre icono y número */
+}
+
+.cta-button:hover {
+    background-color: #1ebe57; /* Un verde un poco más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); /* Sombra verde */
+}
+
+/* Estilo para el SVG del icono */
+.wa-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* Hace que el icono tome el color del texto (blanco) */
+}
+
+/* AJUSTE MÓVIL IMPORTANTE */
+/* Aseguramos que en celular el botón se vea bien dentro del menú desplegable si decides mostrarlo */
+@media (max-width: 768px) {
+    .cta-button {
+        display: flex; /* Forzar display flex si antes estaba en none */
+        width: fit-content;
+        margin: 1rem auto; /* Centrarlo en el menú móvil */
+    }
+}
+
+/* === 3. HERO BANNER (CON SLIDER) === */
+.hero {
+    position: relative; /* Necesario para posicionar el slider */
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px; /* Compensar header fijo */
+    color: #fff;
+    text-align: center;
+    overflow: hidden; /* Corta las imágenes si se salen */
+}
+
+/* El contenedor de las diapositivas */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Al fondo */
+}
+
+/* Cada diapositiva individual */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Invisible por defecto */
+    transition: opacity 1.5s ease-in-out; /* Transición suave de 1.5s */
+}
+
+/* La clase que activa la diapositiva */
+.slide.active {
+    opacity: 1; /* Visible */
+}
+
+/* Capa oscura (Overlay) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Filtro negro al 50% */
+    z-index: 1; /* Encima del slider, debajo del texto */
+}
+
+/* Contenido (Texto y botones) */
+.hero-container {
+    position: relative;
+    z-index: 2; /* Encima de todo */
+    width: 90%;
+    max-width: 1200px;
+    transform: translateY(10vh);
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-content h1 { font-size: 4rem; }
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .hero-buttons { flex-direction: row; }
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn.primary { background-color: #65b84f; color: white; }
+.btn.primary:hover { background-color: #55a044; transform: translateY(-2px); }
+
+.btn.secondary { background-color: transparent; border: 2px solid white; color: white; }
+.btn.secondary:hover { background-color: white; color: #274637; transform: translateY(-2px); }
+
+/* === 4. RESTO DE SECCIONES (Sin cambios importantes) === */
+section { padding: 4rem 1.5rem; width: 100%; }
+.services-grid, .trust-logos, .category-grid, .about-container, .footer-grid { max-width: 1200px; margin: 0 auto; }
+h2 { text-align: center; font-size: 2.2rem; color: #274637; margin-bottom: 3rem; }
+
+/* Services */
+.services { background-color: #f9fafb; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.service-card { background: white; padding: 2rem; border-radius: 12px; text-align: center; box-shadow: 0 10px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+.service-card:hover { transform: scale(1.03); }
+.service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; }
+
+/* Trust */
+.trust-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; opacity: 0.7; }
+.trust-logos img { height: 4rem; object-fit: contain; filter: grayscale(100%); transition: 0.3s; }
+.trust-logos img:hover { filter: grayscale(0%); }
+
+/* Catalog */
+.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.category-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; }
+.category-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.category-card img { width: 100%; height: 220px; object-fit: cover; }
+.category-card-content { padding: 1.5rem; text-align: center; }
+.buy-button { background-color: #65b84f; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; margin-top: 0.5rem; }
+.buy-button:hover { background-color: #55a044; }
+
+/* === SECCIÓN ABOUT (Reemplaza toda esta sección en tu CSS) === */
+
+.about {
+    padding: 4rem 1.5rem;
+    background-color: #274637;
+    color: #fff;
+}
+
+.about h2 {
+    color: white;
+    /* Aseguramos que el título se alinee a la izquierda en móvil también si se prefiere */
+    text-align: center; 
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem; /* Espacio entre texto e imagen */
+    text-align: center;
+}
+
+/* ESTILOS PARA VERSIÓN WEB (Escritorio) */
+@media (min-width: 900px) { /* Subí un poco el punto de quiebre para que se vea mejor en tablets grandes */
+    .about-container {
+        flex-direction: row; /* Poner uno al lado del otro */
+        text-align: left;
+        align-items: center; /* Centrar verticalmente texto e imagen */
+        justify-content: space-between; /* Separarlos a los extremos */
+    }
+
+    .about h2 {
+        text-align: left;
+    }
+
+    /* LADO DEL TEXTO */
+    .about-content {
+        /* <--- CAMBIO: Ahora el texto ocupa el 65% del espacio (dejando un hueco para el gap) */
+        flex: 0 0 55%; 
+    }
+
+    /* LADO DE LA IMAGEN */
+    .about-image {
+        /* <--- CAMBIO: El contenedor de la imagen ahora ocupa el 30% exacto */
+        flex: 0 0 45%; 
+        display: block; /* Cambiado de flex a block para que la imagen llene el contenedor */
+    }
+}
+
+/* ESTILOS GENERALES DEL CONTENIDO */
+/* (Estos se aplican si no estamos en la versión de escritorio definida arriba) */
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.about-content .cta-button {
+    background-color: #fff;
+    color: #274637;
+    display: inline-block; /* Asegura que el botón no se estire de más */
+}
+
+.about-image {
+    width: 100%; /* En móvil ocupa todo el ancho */
+    display: flex;
+    justify-content: center;
+}
+
+/* ESTILO DE LA IMAGEN */
+.about-image img {
+    width: 100%; /* Que intente ocupar todo su contenedor */
+    height: auto; /* Mantener proporciones */
+    
+    /* <--- CAMBIO CRÍTICO: Eliminamos el 'max-width: 400px' que limitaba el tamaño */
+    max-width: none; 
+    
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+}
+
+/* Footer */
+.footer { background-color: #1e362d; color: #ccc; padding-top: 4rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+.footer h3 { color: #65b84f; margin-bottom: 1rem; }
+.footer ul { list-style: none; }
+.footer a { color: #ccc; text-decoration: none; }
+.footer a:hover { color: white; }
+.footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #333; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav { display: none; position: absolute; top: 70px; left: 0; width: 100%; background-color: white; flex-direction: column; padding: 2rem; box-shadow: 0 10px 10px rgba(0,0,0,0.1); }
+    .nav.active { display: flex; }
+    .mobile-menu-btn { display: block; }
+    .cta-button { display: none; }
+}
+
+/* === 5. NUEVA SECCIÓN DE COTIZACIÓN (CTA) === */
+.cta-quote {
+    background-color: #65b84f; /* Verde principal */
+    color: white;
+    text-align: center;
+    padding: 5rem 1.5rem;
+}
+
+.cta-quote-content h2 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-quote-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
+}
+
+/* Botón Blanco para contrastar con fondo verde */
+.btn.white-green {
+    background-color: white;
+    color: #274637;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn.white-green:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+/* === WIDGET WHATSAPP (IZQUIERDA) === */
+.whatsapp-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* POSICIÓN IZQUIERDA */
+    z-index: 2000;
+    font-family: 'Inter', sans-serif;
+}
+
+/* El botón redondo flotante */
+.float-wa-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.float-wa-btn:hover {
+    transform: scale(1.1);
+    background-color: #20b857;
+}
+
+/* La Ventana del Chat */
+.chat-box {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    bottom: 80px; /* Encima del botón */
+    left: 0;
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+    flex-direction: column;
+}
+
+/* Clase para mostrar el chat vía JS */
+.chat-box.active {
+    display: flex;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cabecera del chat (Verde oscuro marca) */
+.chat-header {
+    background-color: #274637; 
+    color: white;
+    padding: 10px 15px; /* Un poco menos de padding vertical para ajustar la foto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Contenedor para Foto + Texto */
+.chat-header-user {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre la foto y el texto */
+}
+
+/* La Foto de Perfil Redonda */
+.chat-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Esto la hace redonda */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    border: 2px solid rgba(255,255,255,0.2); /* Un borde sutil opcional */
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-title { 
+    font-weight: 700; 
+    font-size: 0.95rem; 
+    line-height: 1.2;
+}
+
+.chat-status { 
+    font-size: 0.75rem; 
+    opacity: 0.85; 
+    margin-top: 2px;
+    font-weight: 300;
+}
+
+.close-btn {
+    background: none; 
+    border: none; 
+    color: white;
+    font-size: 1.8rem; /* Un poco más grande para facilitar el clic */
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 5px;
+}
+.close-btn:hover {
+    opacity: 0.7;
+}
+
+/* Cuerpo del chat */
+.chat-body {
+    padding: 20px;
+    background-color: #e5ddd5; /* Color fondo típico WhatsApp */
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* Trama opcional */
+    min-height: 150px;
+}
+
+.message-bubble {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 0 15px 15px 15px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #333;
+    position: relative;
+}
+
+/* Pie del chat (Input) */
+.chat-footer {
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-footer input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 15px;
+    outline: none;
+}
+
+.send-btn {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-btn:hover { background-color: #1ebe57; }
+
+/* Móvil: Ajustar posición para que no choque con bordes */
+@media (max-width: 768px) {
+    .whatsapp-widget { left: 20px; bottom: 20px; }
+    .chat-box { width: 280px; }
+}

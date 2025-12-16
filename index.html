@@ -1,14 +1,235 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/viverotierraandina2/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tierra-andina-demo</title>
-    <script type="module" crossorigin src="/viverotierraandina2/assets/index-utGTkJqH.js"></script>
-    <link rel="stylesheet" crossorigin href="/viverotierraandina2/assets/index-B3DBmGuR.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivero Tierra Andina - Expertos en Flora Nativa</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon1.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Tierra Andina Logo" class="logo-img">
+        </div>
+        
+        <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+
+        <nav class="nav">
+            <a href="#servicios">Inicio</a>
+            <a href="#servicios">Proyectos y Servicios</a>
+            <a href="#catalogo">Catálogo Plantas</a>
+            <a href="#about">Nosotros</a>
+            <a href="#footer">Contacto</a>
+        </nav>
+        <a href="https://wa.me/51983676337" target="_blank" class="cta-button whatsapp-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="wa-icon">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            +51 983 676 337 
+        </a>
+    </header>
+
+    <section class="hero">
+        
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('img/banner_1.jpg');"></div>
+            <div class="slide" style="background-image: url('img/banner_2.png');"></div>
+            <div class="slide" style="background-image: url('img/banner_3.jpg');"></div>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Expertos en Flora Nativa y Proyectos de Reforestación</h1>
+                <p>Liderados por los Ing. Forestales Diego y Jhanela, con más de 5 años de experiencia transformando paisajes en la Región Junín.</p>
+                <div class="hero-buttons">
+                    <a href="#servicios"><button class="btn primary">Ver Proyectos y Servicios </button> </a>
+                    <a href="#catalogo"><button class="btn secondary">Ver Catálogo de Plantas</button>  </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <h2>Soluciones Integrales para Empresas y Gobiernos</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="img/forestacion.jpg" alt="Forestación">
+                <h3>Forestación y Reforestación</h3>
+                <br>
+                <p>Proyectos a gran escala con especies nativas y adaptadas para la recuperación de ecosistemas.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/mantenimiento.jpg" alt="Mantenimiento">
+                <h3>Mantenimiento de Áreas Verdes</h3>
+                <br>
+                <p>Servicio recurrente para parques, colegios, condominios y espacios urbanos.</p>
+            </div>
+            <div class="service-card">
+                <img src="img/diseno.jpg" alt="Diseño">
+                <h3>Diseño de Jardines Sostenibles</h3>
+                <br>
+                <p>Creación de espacios verdes estéticos y de bajo consumo de agua, adaptados al clima andino.</p>
+            </div>
+        </div>
+    </section>
+
+    </section> 
+
+    <section class="cta-quote">
+        <div class="cta-quote-content">
+            <h2>¿Listo para transformar su espacio?</h2>
+            <p>Cotice su proyecto de forestación, mantenimiento o diseño de jardines con nosotros.</p>
+            <a href="https://wa.me/51999909380?text=Hola%20vivero%20Tierra%20Andina%20necesito%20asesoria%20en%20plantas" target="_blank" class="btn white-green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                Cotizar Proyecto
+            </a>
+        </div>
+    </section>
+
+    <section class="trust">
+        <h2>Nuestros Clientes Confían en Nosotros</h2>
+        <div class="trust-logos">
+            <img src="img/logo-sima.png" alt="SIMA">
+            <img src="img/logo-caritas.png" alt="Cáritas">
+            <img src="img/cliente-3.jpeg" alt="Cliente 3">
+            <img src="img/cliente-4.jpeg" alt="Cliente 4">
+        </div>
+    </section>
+
+    <section id="catalogo" class="catalog-preview">
+        <h2>Explore Nuestro Vivero</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="img/cat-nativas.jpg" alt="Nativas">
+                <div class="category-card-content">
+                    <p>Plantas Nativas</p>
+                    <button class="buy-button">Ver Más</button>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="img/cat-ornamentales.jpg" alt="Ornamentales">
+                <div class="category-card-content">
+                    <p>Ornamentales de Altura</p>
+                    <button class="buy-button">Ver Más</button>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="img/cat-frutales.jpg" alt="Frutales">
+                <div class="category-card-content">
+                    <p>Árboles Frutales</p>
+                    <button class="buy-button">Ver Más</button>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="img/cat-sustratos.png" alt="Sustratos">
+                <div class="category-card-content">
+                    <p>Sustratos y Macetas</p>
+                    <button class="buy-button">Ver Más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Nuestra Pasión: Cultivar Vida en los Andes</h2>
+                <p>En Vivero Tierra Andina, combinamos la ingeniería forestal con el amor por la naturaleza. Creemos en el poder de las plantas para transformar espacios y comunidades, siempre respetando la riqueza de nuestra flora andina.</p>
+              <!-- 
+                <button class="cta-button white">Conoce al Equipo</button>
+            -->
+            </div>
+            <div class="about-image">
+                <img src="img/equipo.png" alt="Equipo Tierra Andina">
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Tierra Andina</h3>
+                <p>Vivero y Proyectos Forestales</p>
+                <p>Huaripampa, Jauja, Perú</p>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#about">Proyectos</a></li>
+                    <li><a href="#footer">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <p>📞 +51 983676337 - 999909380</p>
+                <p>✉️ info@tierraandina.com</p>
+            </div>
+            <div class="footer-column">
+                <h3>Síguenos</h3>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/profile.php?id=100069552676190">
+                        Facebook
+                    </a> <br>
+                    <a href="https://wa.me/51983676337">
+                        Whatsapp
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Tierra Andina Enraizando Vida S.A.C. Todos los derechos reservados.
+        </div>
+    </footer>
+    <div class="whatsapp-widget">
+            
+    <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <div class="chat-header-user">
+                    <img src="img/fotochat.png" alt="Avatar" class="chat-avatar">
+                    
+                    <div class="header-info">
+                        <p class="chat-title">Atención Tierra Andina</p>
+                        <p class="chat-status">Responde en minutos</p>
+                    </div>
+                </div>
+                
+                <button id="closeChat" class="close-btn">×</button>
+            </div>
+            
+            <div class="chat-body">
+                <div class="message-bubble">
+                    ¡Hola! 👋 ¿En qué podemos ayudarte hoy con tus plantas?
+                </div>
+            </div>
+            
+            <div class="chat-footer">
+                <input type="text" id="userMsg" placeholder="Escribe tu consulta aquí..." />
+                <button id="sendBtn" class="send-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <button id="toggleChat" class="float-wa-btn" aria-label="Abrir chat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="white">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
